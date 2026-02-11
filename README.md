@@ -1,73 +1,142 @@
-# React + TypeScript + Vite
+<h1 align="center">Task Application</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  Uma landing page moderna e responsiva para uma agência de viagens fictícia, focada em destinos europeus encantadores. Desenvolvida como projeto prático de HTML, CSS e JavaScript.
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  <img src="https://img.shields.io/badge/Bun-181717?style=flat&logo=Bun" />
+  <img src="https://img.shields.io/badge/React-181717?style=flat&logo=React" />
+  <img src="https://img.shields.io/badge/Vite-181717?style=flat&logo=Vite" />
+  <img src="https://img.shields.io/badge/TypeScript-181717?style=flat&logo=TypeScript" />
+  <img src="https://img.shields.io/badge/Shadcn-ui-181717?style=flat&logo=Shadcn-ui" />
+  <img src="https://img.shields.io/badge/Tailwind-181717?style=flat&logo=Tailwind" />
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 📋 Sobre o Projeto
+Task Application é uma aplicação web para gerenciamento de tarefas desenvolvida com React e TypeScript.
 
-## React Compiler
+O projeto permite criar, editar, concluir e excluir tarefas com persistência local no navegador.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Foi desenvolvido com foco em:
+- ✅ Arquitetura baseada em Context API
 
-## Expanding the ESLint configuration
+- ✅ Tipagem forte com TypeScript
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ Componentização com shadcn/ui
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- ✅ Persistência de dados com LocalStorage
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🎯 Funcionalidades
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Adicionar Tarefas**: Criação de novas tarefas com título e descrição opcional
+
+- **Editar Tarefas**: Atualização de informações existentes
+
+- **Excluir Tarefas**: Remoção com confirmação via AlertDialog
+
+- **Marcar como Concluída**: Toggle de status com feedback visual
+
+- **Filtro de Tarefas**:
+  - Todas
+  - Pendentes
+  - Concluídas
+
+- **Persistência Local**: Dados salvos automaticamente no LocalStorage
+
+- **Estado Vazio Inteligente**: Mensagens diferentes para lista vazia e filtro sem resultados
+
+- **Interface Responsiva**: Layout adaptável para diferentes tamanhos de tela
+
+### 🧱 Arquitetura
+- O projeto foi estruturado seguindo boas práticas de organização:
+
+- Context API para gerenciamento global de tarefas
+
+- Componentes reutilizáveis (TaskCard, TaskForm, etc.)
+
+- Separação de responsabilidades
+
+- Design tokens personalizados via Tailwind v4
+
+- Sistema de variantes com shadcn/ui
+
+### 🚀 Tecnologias Utilizadas
+
+- **React** – Interface declarativa
+
+- **TypeScript** – Tipagem estática e segurança
+
+- **Vite** – Build tool moderna
+
+- **Tailwind CSS v4** – Estilização utilitária
+
+- **shadcn/ui** – Componentes acessíveis e reutilizáveis
+
+- **Lucide React** – Ícones
+
+- **React Router** – Navegação entre páginas
+
+- **LocalStorage API** – Persistência de dados no navegador
+
+### 💻 Como Executar
+
+1. **Clone o repositório**
+```bash
+git clone https://github.com/henrymzs/task-application.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Acesse a pasta do projeto**
+```bash
+cd task-application
 ```
+
+3. **Instale as dependências**
+```bash
+npm install ou bun install
+```
+
+4. **Execute o projeto**
+```bash
+npm run dev ou bun dev
+```
+
+5. **A aplicação estará disponível em:**
+```bash
+http://localhost:5173
+```
+
+### 📦 Persistência de Dados
+As tarefas são armazenadas no navegador utilizando a **API localStorage**.
+
+Os dados são salvos automaticamente a cada modificação e recuperados no carregamento da aplicação.
+
+### 📱 Responsividade
+
+O projeto é totalmente responsivo e foi testado nos seguintes breakpoints:
+
+- **Mobile**: < 600px
+- **Tablet**: 600px - 991px
+- **Desktop**: ≥ 992px
+
+### 📸 Screenshots
+
+### Desktop
+![Desktop View](./src/assets/image/pc.png)
+
+### Mobile
+![Mobile View](./src/assets/image/mobile.png)
+
+### Tablet
+![Mobile View](./src/assets/image/tablet.png)
+
+
+### 👤 Autor
+
+**Henry**
+
+- GitHub: [@henrymzs](https://github.com/henrymzs)
+- LinkedIn: [henry-kaua](https://linkedin.com/in/henry-kaua/)
+- Email: henrykaua21@gmail.com
+
+⭐ **Se este projeto te ajudou, considere dar uma estrela!**
